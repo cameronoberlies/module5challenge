@@ -1,13 +1,14 @@
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
-var saveButton = $('.saveBtn');
-var timeBlock = $('.time-block');
-
+var saveButton = $('.saveBtn').value;
+var timeBlock = $('.time-block').value;
 
 
 var today = dayjs();
 $('#currentDay').text(today.format('dddd, MMMM D'));
+
+
 
 
 function saveInput() {
@@ -17,14 +18,13 @@ function saveInput() {
     localStorage.setItem('userInput', JSON.stringify(userInput));
   };
 
-  saveButton.addEventListener ('click',function (event) {
+  saveButton.addEventListener('click',function (event) {
     event.preventDefault();
     saveInput();
 
   });
 
   
-
   
   
   // TODO: Add a listener for click events on the save button. This code should
